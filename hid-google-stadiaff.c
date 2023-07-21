@@ -119,7 +119,7 @@ static int stadia_probe(struct hid_device *hdev, const struct hid_device_id *id)
 
 	ret = stadiaff_init(hdev);
 	if (ret) {
-		dev_err(&hdev->dev, "force feedback init failed\n");
+		hid_err(hdev, "force feedback init failed\n");
 		hid_hw_stop(hdev);
 		return ret;
 	}
